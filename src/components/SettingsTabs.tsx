@@ -8,9 +8,9 @@ export function SettingsTabs() {
 
   return (
     <Tabs.Root
+      className="mb-8"
       value={currentTab}
       onValueChange={setCurrentTab}
-      className="ml-8"
     >
       <Tabs.List className="flex w-full gap-4 border-b-[1px] border-zinc-200 ">
         <TabItem

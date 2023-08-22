@@ -1,12 +1,17 @@
+'use client'
 import React, { ComponentProps } from 'react'
 import { UploadCloud } from 'lucide-react'
+
+import { useInputFile } from './Root'
 
 type TriggerProps = ComponentProps<'label'>
 
 export const Trigger = (props: TriggerProps) => {
+  const { id } = useInputFile()
+
   return (
     <label
-      htmlFor="photo"
+      htmlFor={id}
       className="group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 bg-violet-25 px-6 py-4 text-center shadow-sm hover:border-violet-200"
       {...props}
     >

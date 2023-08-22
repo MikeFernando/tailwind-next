@@ -1,6 +1,6 @@
 import { SettingsTabs } from '@/components/SettingsTabs'
 import * as Input from '../components/Input'
-import { Clock, Mail, User } from 'lucide-react'
+import { Clock, Mail, UploadCloud, User } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -92,10 +92,33 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div className="flex gap-6">
+            <div className="flex items-start gap-5">
               <div className="h-16px flex w-16 items-center justify-center rounded-full bg-violet-50 p-4">
                 <User className="h-8 w-8 text-violet-600" />
               </div>
+
+              <label
+                htmlFor="photo"
+                className="bg-violet-25 group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center shadow-sm hover:border-violet-200"
+              >
+                <div className="border-6 group-hover:border-via-violet-50 rounded-full border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100">
+                  <UploadCloud className="h-5 w-5 text-zinc-600 group-hover:text-violet-600" />
+                </div>
+
+                <div className="group flex flex-col items-center gap-1 text-zinc-500 group-hover:text-violet-500">
+                  <span className="text-sm font-semibold text-violet-500 ">
+                    Click to upload{' '}
+                    <span className="text-sm font-normal">
+                      or drag and drop
+                    </span>
+                  </span>
+                  <span className="text-xs">
+                    SVG, PNG, JPG or GIF (max. 800x400px)
+                  </span>
+                </div>
+              </label>
+
+              <input type="file" id="photo" className="sr-only" />
             </div>
           </div>
           {/* Role */}

@@ -3,6 +3,8 @@ import { Clock, Mail } from 'lucide-react'
 import { SettingsTabs } from '@/components/SettingsTabs'
 import * as Input from '../components/Input'
 import * as FileInput from '../components/Form/FileInput'
+import { SelectItem } from '@/components/Form/Select/SelectItem'
+import { Select } from '@/components/Form/Select'
 
 export default function Home() {
   return (
@@ -126,15 +128,11 @@ export default function Home() {
             >
               Country
             </label>
-            <div className="flex gap-6">
-              <Input.Root>
-                <Input.Control
-                  id="role"
-                  placeholder="United States"
-                  className="text-base font-normal text-zinc-900 placeholder:text-zinc-900"
-                />
-              </Input.Root>
-            </div>
+
+            <Select placeholder="Select a country...">
+              <SelectItem text="United States" value="us" />
+              <SelectItem text="Brasil" value="br" />
+            </Select>
           </div>
           {/* Timezone */}
           <div className="grid grid-cols-form py-5">
@@ -142,20 +140,15 @@ export default function Home() {
               htmlFor="timezone"
               className="text-sm font-semibold text-zinc-700"
             >
-              Country
+              Timezone
             </label>
-            <div className="flex gap-6">
-              <Input.Root>
-                <Input.Prefix>
-                  <Clock className="h-5 w-5" />
-                </Input.Prefix>
-                <Input.Control
-                  id="timezone"
-                  placeholder="Pacific Standard Time (PST) UTC−08:00"
-                  className="flex items-center text-base font-normal text-zinc-900 placeholder:text-zinc-900"
-                />
-              </Input.Root>
-            </div>
+            <Select placeholder="Timezone...">
+              <SelectItem
+                text="Pacific Standard Time (UTC−08:00)"
+                value="utc"
+              />
+              <SelectItem text="America São Paulo, SP (GMT-3)" value="gmt-3" />
+            </Select>
           </div>
           {/* Bio */}
           <div className="grid grid-cols-form py-5">
@@ -187,6 +180,7 @@ export default function Home() {
             </label>
             <FileInput.Root>
               <FileInput.Trigger />
+              <FileInput.FileList />
               <FileInput.Control multiple />
             </FileInput.Root>
           </div>

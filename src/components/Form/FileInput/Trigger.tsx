@@ -20,7 +20,7 @@ export const Trigger = (props: TriggerProps) => {
       </div>
 
       <div className="group flex flex-col items-center gap-1 text-zinc-500 group-hover:text-violet-500">
-        <span className="text-sm font-semibold text-violet-500 ">
+        <span className="text-sm font-semibold text-violet-500 group-hover:text-violet-700">
           Click to upload{' '}
           <span className="text-sm font-normal">or drag and drop</span>
         </span>

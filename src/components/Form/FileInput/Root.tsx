@@ -6,7 +6,7 @@ type RootProps = ComponentProps<'div'>
 interface InputFileContextData {
   id: string
   files: File[]
-  onFilesSelected: (files: File[]) => void
+  onFilesSelected: (files: File[], multiple: boolean) => void
 }
 
 const InputFileContext = React.createContext({} as InputFileContextData)
@@ -15,8 +15,16 @@ export const Root = (props: RootProps) => {
   const id = React.useId()
   const [files, setFiles] = React.useState<File[]>([])
 
+  function onFilesSelected(files: File[], multiple: boolean) {
+    if (multiple) {
+      setFiles((state) => [...state, ...files])
+    } else {
+      setFiles(files)
+    }
+  }
+
   return (
-    <InputFileContext.Provider value={{ id, files, onFilesSelected: setFiles }}>
+    <InputFileContext.Provider value={{ id, files, onFilesSelected }}>
       <div {...props} />
     </InputFileContext.Provider>
   )

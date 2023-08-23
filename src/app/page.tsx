@@ -1,10 +1,11 @@
-import { Clock, Mail } from 'lucide-react'
+import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 
 import { SettingsTabs } from '@/components/SettingsTabs'
-import * as Input from '../components/Input'
-import * as FileInput from '../components/Form/FileInput'
 import { SelectItem } from '@/components/Form/Select/SelectItem'
 import { Select } from '@/components/Form/Select'
+import { Textarea } from '@/components/Form/Textarea'
+import * as FileInput from '../components/Form/FileInput'
+import * as Input from '../components/Input'
 
 export default function Home() {
   return (
@@ -161,10 +162,40 @@ export default function Home() {
                 Write a short introduction.
               </span>
             </label>
-            <div className="flex gap-6">
-              <Input.Root>
-                <Input.Control placeholder="Normal text" />
-              </Input.Root>
+            <div className="space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <Select placeholder="" defaultValue="normal">
+                  <SelectItem
+                    text="Text Normal"
+                    defaultChecked
+                    value="normal"
+                  />
+                  <SelectItem text="Markdown" value="md" />
+                </Select>
+
+                <div className="flex items-center gap-1">
+                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                    <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                    <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                    <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                    <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
+                  </button>
+                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                    <ListOrdered
+                      className="h-4 w-4 text-zinc-500"
+                      strokeWidth={3}
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <Textarea />
             </div>
           </div>
           {/* Portfolio */}

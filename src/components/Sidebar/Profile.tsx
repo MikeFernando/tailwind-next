@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { LogOut } from 'lucide-react'
 
 export const Profile = () => {
@@ -16,7 +17,6 @@ export const Profile = () => {
           applemikera@gmail.com
         </span>
       </div>
-
       <button className="rounded-lg p-2 hover:bg-violet-50">
         <LogOut className="text-zinc-500" />
       </button>

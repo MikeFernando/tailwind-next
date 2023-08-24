@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 import { useInputFile } from './Root'
 import { Trash2, UploadCloud } from 'lucide-react'
@@ -7,9 +8,10 @@ import { formatBytes } from '@/utils/formatBytes'
 
 export const FileList = () => {
   const { files } = useInputFile()
+  const [parent] = useAutoAnimate({})
 
   return (
-    <div className="mt-4 space-y-3">
+    <div ref={parent} className="mt-4 space-y-3">
       {files.map((file) => (
         <div
           key={file.name}

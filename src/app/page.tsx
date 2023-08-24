@@ -6,6 +6,7 @@ import { Select } from '@/components/Form/Select'
 import { Textarea } from '@/components/Form/Textarea'
 import * as FileInput from '../components/Form/FileInput'
 import * as Input from '../components/Form/Input'
+import { Button } from '@/components/Button'
 
 export default function Home() {
   return (
@@ -26,16 +27,8 @@ export default function Home() {
           </div>
 
           <div className="flex gap-2">
-            <button className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50">
-              Cancel
-            </button>
-            <button
-              type="submit"
-              form="settings"
-              className="rounded-lg border bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-700"
-            >
-              Save
-            </button>
+            <Button variant="outline">Cancel</Button>
+            <Button variant="primary">Save</Button>
           </div>
         </div>
 
@@ -53,14 +46,14 @@ export default function Home() {
                 <Input.Control
                   id="name"
                   placeholder="Oliva"
-                  className="text-base font-normal text-zinc-900 placeholder:text-zinc-900"
+                  className="text-base font-normal text-zinc-900 outline-none placeholder:text-zinc-900"
                 />
               </Input.Root>
 
               <Input.Root>
                 <Input.Control
                   placeholder="Rhye"
-                  className="text-base font-normal text-zinc-900 placeholder:text-zinc-900"
+                  className="text-base font-normal text-zinc-900 outline-none placeholder:text-zinc-900"
                 />
               </Input.Root>
             </div>
@@ -116,7 +109,7 @@ export default function Home() {
                 <Input.Control
                   id="role"
                   placeholder="Product Designer"
-                  className="text-base font-normal text-zinc-900 placeholder:text-zinc-900"
+                  className="text-base font-normal text-zinc-900 outline-none placeholder:text-zinc-900"
                 />
               </Input.Root>
             </div>
@@ -174,24 +167,24 @@ export default function Home() {
                 </Select>
 
                 <div className="flex items-center gap-1">
-                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                  <Button variant="ghost" type="button">
                     <Bold className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                  </Button>
+                  <Button variant="ghost" type="button">
                     <Italic className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                  </Button>
+                  <Button variant="ghost" type="button">
                     <Link className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                  </Button>
+                  <Button variant="ghost" type="button">
                     <List className="h-4 w-4 text-zinc-500" strokeWidth={3} />
-                  </button>
-                  <button className="rounded-lg p-2 hover:bg-violet-50">
+                  </Button>
+                  <Button variant="ghost" type="button">
                     <ListOrdered
                       className="h-4 w-4 text-zinc-500"
                       strokeWidth={3}
                     />
-                  </button>
+                  </Button>
                 </div>
               </div>
 
@@ -217,16 +210,8 @@ export default function Home() {
           </div>
           {/* Buttons */}
           <div className="flex justify-end gap-2 py-4">
-            <button className="rounded-lg border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50">
-              Cancel
-            </button>
-            <button
-              type="submit"
-              form="settings"
-              className="rounded-lg border bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-700"
-            >
-              Save
-            </button>
+            <Button variant="outline">Cancel</Button>
+            <Button variant="primary">Save</Button>
           </div>
         </form>
       </div>

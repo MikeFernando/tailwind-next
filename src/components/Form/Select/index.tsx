@@ -3,15 +3,15 @@ import React from 'react'
 import { ChevronDown } from 'lucide-react'
 import * as SelectPrimitive from '@radix-ui/react-select'
 
-interface SelectProps {
+interface SelectProps extends SelectPrimitive.SelectProps {
   children: React.ReactNode
   placeholder: string
 }
 
-export const Select = ({ children, placeholder }: SelectProps) => {
+export const Select = ({ children, placeholder, ...props }: SelectProps) => {
   return (
-    <SelectPrimitive.Root>
-      <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-500">
+    <SelectPrimitive.Root {...props}>
+      <SelectPrimitive.Trigger className="flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm outline-none focus:border-violet-300 focus:ring-2 focus:ring-violet-100 data-[placeholder]:text-zinc-500">
         <SelectPrimitive.Value
           className="text-black"
           placeholder={placeholder}
@@ -26,7 +26,7 @@ export const Select = ({ children, placeholder }: SelectProps) => {
           side="bottom"
           position="popper"
           sideOffset={8}
-          className="z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-200 bg-white"
+          className="animate-slideDownAndFade z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-200 bg-white outline-none "
         >
           <SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport>
         </SelectPrimitive.Content>

@@ -13,7 +13,7 @@ export function TabItem({ value, title, isSelected = false }: TabItemProps) {
       className="relative pb-4 text-sm text-zinc-500 hover:text-violet-700 data-[state='active']:text-violet-700"
       value={value}
     >
-      <span className="font-medium">{title}</span>
+      <span className="whitespace-nowrap font-medium">{title}</span>
 
       {isSelected && (
         <motion.div

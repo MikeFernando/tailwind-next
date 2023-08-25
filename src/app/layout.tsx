@@ -15,9 +15,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className='antialiased'>
       <body className={inter.className}>
-        <div className="grid min-h-screen mx-auto max-w-screen-2xl grid-cols-app">
+        <div className="min-h-screen mx-auto lg:grid lg:grid-cols-app">
           <Sidebar />
-          <main className="px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12">{children}</main>
+          <main className="px-4 pt-24 pb-12 lg:col-start-2 lg:px-8 lg:pt-8 lg:pb-12 mx-w-[100vw]">{children}</main>
         </div>
       </body>
     </html>
